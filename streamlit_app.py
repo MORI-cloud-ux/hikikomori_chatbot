@@ -43,7 +43,7 @@ if not st.session_state.authenticated:
     if st.button("はじめる 🌱"):
         if password_input == ACCESS_PASS:
             st.session_state.authenticated = True
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("パスワードが違います。")
     st.stop()
