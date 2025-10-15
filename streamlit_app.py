@@ -80,7 +80,7 @@ knowledge_base = {
 # --- システムプロンプト生成 ---
 def build_system_prompt(fixed_phase=None):
     prompt = "あなたはひきこもり支援の専門家です。\n"
-    prompt += "以下の知識ベースに基づき、利用者の状態に応じて共感的に応答してください。\n"
+    prompt += "以下の知識ベースに基づき、利用者のPhaseを提示して、状態に応じて共感的に応答してください。\n"
     if fixed_phase:
         prompt += f"今回の相談は phase: {fixed_phase} に固定します。\n"
     prompt += f"知識ベース: {json.dumps(knowledge_base, ensure_ascii=False)}"
