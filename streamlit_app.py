@@ -103,9 +103,9 @@ if not st.session_state.authenticated:
 if "user" not in st.session_state:
     st.session_state.user = None
 
-st.markdown("<h1>👥 ログイン / 新規登録</h1>", unsafe_allow_html=True)
-
 if st.session_state.user is None:
+    st.markdown("<h1>👥 ログイン / 新規登録</h1>", unsafe_allow_html=True)
+
     tab_login, tab_signup = st.tabs(["ログイン", "新規登録"])
 
     with tab_login:
@@ -494,3 +494,4 @@ if date_options:
                 )
 else:
     st.info("まだ記録された過去の相談はありません。")
+
