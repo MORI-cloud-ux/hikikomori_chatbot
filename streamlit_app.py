@@ -379,7 +379,7 @@ def generate_response(user_input: str) -> str:
 # ============================================================
 # 🏷 8. タイトル・フェーズ表示
 # ============================================================
-st.markdown("<h1>🤖🌿 AIエージェントへ相談する</h1>", unsafe_allow_html=True)
+st.markdown("<h1>AIエージェントへ相談する</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; color:#2e7d32;'>温かく寄り添い、少しずつ一歩を。</p>", unsafe_allow_html=True)
 
 st.markdown("### 🌿 現在の推定フェーズ")
