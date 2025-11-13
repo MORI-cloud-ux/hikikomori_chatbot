@@ -382,13 +382,13 @@ def generate_response(user_input: str) -> str:
 st.markdown("<h1>AIエージェントへ相談する</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center; color:#2e7d32;'>温かく寄り添い、少しずつ一歩を。</p>", unsafe_allow_html=True)
 
-st.markdown("### 🌿 現在の推定フェーズ")
+st.markdown("### 現在の気持ちの推定フェーズ")
 
 phase_display = [
-    ("phase_1", "Phase 1：閉塞期（閉じこもり・虚無感）"),
-    ("phase_2", "Phase 2：揺らぎ期（関係を求めたい気持ちと不安）"),
-    ("phase_3", "Phase 3：希求・模索期（関わりや意味の模索）"),
-    ("phase_4", "Phase 4：転回期（価値観の転換と再出発）"),
+    ("phase_1", "Phase 1：閉塞期（閉じこもり・虚無感を感じる時期）"),
+    ("phase_2", "Phase 2：揺らぎ期（関係を求めたい気持ちと不安がある時期）"),
+    ("phase_3", "Phase 3：希求・模索期（関わりや意味の模索している時期）"),
+    ("phase_4", "Phase 4：転回期（価値観の転換と再出発に向けた時期）"),
 ]
 
 if st.session_state.current_phase is None:
@@ -494,4 +494,5 @@ if date_options:
                 )
 else:
     st.info("まだ記録された過去の相談はありません。")
+
 
