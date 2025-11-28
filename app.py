@@ -39,7 +39,7 @@ with open("nd_kb_v2.json", "r", encoding="utf-8") as f:
     kb = json.load(f)
 
 # ==============================
-# カテゴリ判定
+# スコアリング
 # ==============================
 def score_categories(text):
     scores = []
@@ -82,7 +82,6 @@ def generate_response(history, category_name, user_input, support, rationale, so
 
 ※ 出典は文末に「📚 出典：」の形で記載してください。
 """
-
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}]
@@ -139,9 +138,9 @@ for msg, sender in st.session_state.messages:
     st.markdown(f'<div class="{bubble}">{msg}</div>', unsafe_allow_html=True)
 
 # ==============================
-# 入力（自動クリアの安全仕様）
+# 入力欄（自動クリア＆安全）
 # ==============================
-user_input = st.chat_input("入力してください（送信で会話が続きます）")
+user_input = st.chat_input("入力してください")
 
 if user_input:
     st.session_state.messages.append((user_input, "user"))
@@ -160,4 +159,5 @@ if user_input:
 
     full_answer = f"{answer}\n\n📚 出典：{source}"
     st.session_state.messages.append((full_answer, "bot"))
+
     st.rerun()
